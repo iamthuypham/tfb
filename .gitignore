@@ -1,0 +1,11 @@
+node_modules
+*lock.json
+*.lock
+.next
+.env
+*.log
+.storybook
+.runtimeconfig.json
+service-account-key.json
+now.json
+next.config.js
