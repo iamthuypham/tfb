@@ -38,11 +38,18 @@ const TourInfo = ({
       <animated.div className="tour-info" style={tourInfoStyle}>
         <div className="tour-info-title">{name}</div>
         <div className="tour-info-description">
-          {truncate(description, 80, '...')}
+          {truncate(description, 150, '...')}
         </div>
-        <SimplePriceDisplay {...price} {...tourLength} isInverse={isInverse} />
+        {/* <SimplePriceDisplay {...price} {...tourLength} isInverse={isInverse} /> */}
         {/* <SimpleReviewDisplay reviewPoint={reviewPoint} /> */}
-        <div className="review-count">{reviewCount} reviews</div>
+        {/* <div className="review-count">{reviewCount} reviews</div> */}
+        <div
+          className="tour-contact-us"
+          target="_blank"
+          href="https://www.facebook.com/messages/t/toursforbooks"
+        >
+          Contact Us
+        </div>
       </animated.div>
       <style jsx>{`
         .tour-info-title {
@@ -51,10 +58,15 @@ const TourInfo = ({
         }
         .tour-info-description {
           margin: ${theme.spacing}px 0px;
-          font-size: ${theme.font.size.small};
+          font-size: ${theme.font.size.normal};
         }
         .review-count {
           font-size: ${theme.font.size.small};
+        }
+        .tour-contact-us {
+          font-size: ${theme.font.size.normal};
+          text-align: center;
+          cursor: pointer;
         }
       `}</style>
     </>

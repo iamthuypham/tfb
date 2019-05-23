@@ -108,7 +108,7 @@ export const PopularToursSection = () => {
         .card-title {
           font-size: ${theme.font.size.large};
           font-weight: 900;
-          color: ${theme.palette.shade[100]};
+          color: ${theme.palette.shade[0]};
         }
         .card-description {
           padding-top: ${theme.spacing}px;
@@ -117,7 +117,7 @@ export const PopularToursSection = () => {
         .card-subtitle {
           font-size: ${theme.font.size.medium};
           font-weight: 900;
-          color: ${theme.palette.shade[100]};
+          color: ${theme.palette.shade[0]};
           margin-bottom: ${theme.spacing}px;
         }
         .card-detail {
