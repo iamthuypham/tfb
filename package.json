@@ -21,6 +21,8 @@
     "react": "^16.8.6",
     "react-day-picker": "^7.3.0",
     "react-dom": "^16.8.6",
+    "react-ga": "^2.5.7",
+    "react-player": "^1.11.0",
     "react-spring": "^8.0.19",
     "react-svg-loader": "^2.1.0",
     "react-youtube": "^7.9.0",

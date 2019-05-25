@@ -44,7 +44,7 @@ export const PopularToursSection = () => {
             padding={`${theme.spacing * 3}px`}
             setIsMouseEnter={() => null}
             backgroundColor={theme.palette.blue[100]}
-            height="50vh"
+            height="60vh"
           >
             <div>
               <div className="card-title">Why Choose Us</div>
