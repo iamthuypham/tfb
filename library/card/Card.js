@@ -8,9 +8,11 @@ const Card = ({
   isReverse,
   isInverse,
   padding,
+  margin,
   backgroundColor,
   height,
-  setIsMouseEnter
+  setIsMouseEnter,
+  setIsMouseDown
 }) => {
   const { color } = useSpring({
     from: {
@@ -23,7 +25,8 @@ const Card = ({
     height: height || '260px',
     display: 'flex',
     flexDirection: isReverse ? 'row-reverse' : 'row',
-    backgroundColor: backgroundColor || interpolate([color], c => `${c}`)
+    backgroundColor: backgroundColor || interpolate([color], c => `${c}`),
+    margin: margin || '0px'
   }
   return (
     <>
@@ -32,10 +35,13 @@ const Card = ({
         style={cardStyle}
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
+        onMouseDown={setIsMouseDown}
       >
-        <div className="card-img">
-          <img src={`${process.env.REACT_STORAGE_IMAGE}/${cardImg}.jpg`} />
-        </div>
+        {cardImg && (
+          <div className="card-img">
+            <img src={`${process.env.REACT_STORAGE_IMAGE}/${cardImg}.jpg`} />
+          </div>
+        )}
         <div className="card-content">{children}</div>
       </animated.div>
       <style jsx>{`
@@ -49,7 +55,7 @@ const Card = ({
           height: 100%;
         }
         .card-content {
-          width: 50%;
+          width: ${cardImg ? '50%' : '100%'};
           padding: ${padding};
         }
       `}</style>

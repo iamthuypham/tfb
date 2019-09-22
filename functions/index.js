@@ -3,6 +3,7 @@ const cors = require('cors')({
   origin: true
 })
 const admin = require('firebase-admin')
+const Feed = require('rss-to-json')
 
 const api = {
   apiKey: process.env.API_KEY,
@@ -35,6 +36,17 @@ exports.getTours = functions.https.onRequest((req, res) => {
         })
         res.status(200).send(results)
       })
+  })
+})
+
+exports.getBlog = functions.https.onRequest((req, res) => {
+  const feed = 'https://medium.com/feed/@' + 'toursforbooks'
+  Feed.load(feed, (err, rss) => {
+    if (err) {
+      return res.status(500).send(err)
+    }
+
+    return res.status(200).send(rss)
   })
 })
 
